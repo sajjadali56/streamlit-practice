@@ -21,6 +21,9 @@ try:
         authenticator.logout()
         st.write(f'Welcome *{st.session_state.get("name")}*')
         st.title("Some content")
+
+        st.text_input("Enter any text", key="input_text")
+        st.write(st.session_state.get("input_text"))
     elif st.session_state.get("authentication_status") is False:
         st.error("Username or password is incorrect")
     elif st.session_state.get("authentication_status") is None:
