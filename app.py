@@ -1,14 +1,17 @@
 import streamlit as st
 import streamlit_authenticator as stauth
+from streamlit_authenticator import Authenticate
 import yaml
 from yaml.loader import SafeLoader
 import pandas as pd
+
 
 def get_data(sheet_name: str):
     data = pd.read_excel("./budget.xlsx", sheet_name=sheet_name)
     data.dropna(inplace=True, how="all")
     data.fillna(0, inplace=True)
     return data
+
 
 def main():
     authenticator.logout()
@@ -35,15 +38,16 @@ def main():
     st.markdown("## Extra")
     st.dataframe(extra)
 
+
 with open("./config.yaml") as file:
     config = yaml.load(file, Loader=SafeLoader)
 
 
-authenticator = stauth.Authenticate(
+authenticator = Authenticate(
     config["credentials"],
     config["cookie"]["name"],
     config["cookie"]["key"],
-    config["cookie"]["expiry_days"],
+    config["cookie"]["cookie_expiry_days"],
 )
 
 try:
@@ -57,4 +61,3 @@ try:
         st.warning("Please enter your username and password")
 except Exception as e:
     st.error(e)
-

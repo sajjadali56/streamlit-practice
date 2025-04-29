@@ -4,7 +4,7 @@ import yaml
 data: dict = {
     "credentials": {"usernames": {}},
     "cookie": {
-        "expiry_days": 30,
+        "cookie_expiry_days": 30,
         "key": "random_signature_key",
         "name": "random_cookie_name",
     },
