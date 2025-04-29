@@ -26,7 +26,7 @@ def main():
     st.title("Some content")
 
     # st.text_input("Enter any text", key="input")
-    number = st.session_state.get("number") or 0
+    number = st.session_state.get("my_number") or 0
     number = st.number_input(
         "Enter any number",
         key="number",
@@ -35,6 +35,9 @@ def main():
         max_value=100,
         value=number,
     )
+
+    if number:
+        st.session_state.my_number = number
 
     st.write(f"You entered {number}")
 

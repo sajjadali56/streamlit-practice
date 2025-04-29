@@ -4,7 +4,7 @@ from streamlit_option_menu import option_menu
 st.markdown("# Page 2 ❄️")
 st.sidebar.markdown("# Page 2 ❄️")
 
-number = st.session_state.get("number") or 0
+number = st.session_state.get("my_number") or 0
 st.write(f"You entered {number}")
 
 left, right = st.columns(2)
@@ -18,7 +18,13 @@ with left:
             "After 9 Months",
             "End of the Year",
         ],
-        icons=["calendar", "list-task", "cloud-upload", "gear", "house"],
+        icons=[
+            "calendar2-event",
+            "list-task",
+            "book-half",
+            "layers-half",
+            "calendar-check",
+        ],
         menu_icon="cast",
         default_index=0,
         styles={
@@ -39,7 +45,7 @@ with left:
 with right:
     selected = option_menu(
         "The rate at which you want to calculate the sensitivity of Model?",
-        ["+-1%", "+-0.5%", "+-0.1%"],
+        ["±1%", "±0.5%", "±0.1%", "±0.01%"],
         icons=["calendar", "list-task", "cloud-upload", "gear", "house"],
         menu_icon="cast",
         default_index=0,
