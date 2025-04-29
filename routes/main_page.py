@@ -26,7 +26,15 @@ def main():
     st.title("Some content")
 
     # st.text_input("Enter any text", key="input")
-    number = st.number_input("Enter any number", key="number", step=1)
+    number = st.session_state.get("number") or 0
+    number = st.number_input(
+        "Enter any number",
+        key="number",
+        step=1,
+        min_value=0,
+        max_value=100,
+        value=number,
+    )
 
     st.write(f"You entered {number}")
 

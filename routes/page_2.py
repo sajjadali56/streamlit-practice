@@ -4,6 +4,9 @@ from streamlit_option_menu import option_menu
 st.markdown("# Page 2 ❄️")
 st.sidebar.markdown("# Page 2 ❄️")
 
+number = st.session_state.get("number") or 0
+st.write(f"You entered {number}")
+
 left, right = st.columns(2)
 with left:
     selected = option_menu(
