@@ -10,6 +10,7 @@ pandas = "*"
 openpyxl = "*"
 seaborn = "*"
 matplotlib = "*"
+streamlit-option-menu = "*"
 
 [dev-packages]
 

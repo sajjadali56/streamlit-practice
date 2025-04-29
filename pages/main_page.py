@@ -3,13 +3,15 @@ import pandas as pd
 
 import seaborn as sns
 import matplotlib.pyplot as plt
-
 import numpy as np
 import time
 
 
+excel = pd.ExcelFile("./budget.xlsx")
+
+
 def get_data(sheet_name: str):
-    data = pd.read_excel("./budget.xlsx", sheet_name=sheet_name)
+    data = pd.read_excel(excel, sheet_name=sheet_name)
     data.dropna(inplace=True)
     data.fillna(0, inplace=True)
     return data

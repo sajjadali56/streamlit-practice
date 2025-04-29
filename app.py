@@ -5,6 +5,9 @@ import yaml
 from yaml.loader import SafeLoader
 
 
+st.set_page_config(layout="wide")
+
+
 def main():
     authenticator.logout()
 
