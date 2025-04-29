@@ -7,15 +7,27 @@ data: dict = {
         "expiry_days": 30,
         "key": "random_signature_key",
         "name": "random_cookie_name",
-},}
+    },
+}
 
 accounts = {
-    "jsmith": {"email": "jsmith@gmail.com", "name": "John Smith", "password": "abc123"},
+    "jsmith": {
+        "email": "jsmith@gmail.com",
+        "name": "John Smith",
+        "first_name": "John",
+        "last_name": "Smith",
+        "password": "abc123",
+        "logged_in": False,
+    },
     "rbriggs": {
         "email": "rbriggs@gmail.com",
         "name": "Rebecca Briggs",
+        "first_name": "Rebecca",
+        "last_name": "Briggs",
         "password": "def456",
-},}
+        "logged_in": False,
+    },
+}
 
 hasher = stauth.Hasher()
 
@@ -31,6 +43,6 @@ print(hashed_accounts)
 
 data["credentials"]["usernames"] = hashed_accounts
 
-with open("hashed_accounts.yaml", "w") as f:
+with open("config.yaml", "w") as f:
 
     yaml.dump(data, f)
