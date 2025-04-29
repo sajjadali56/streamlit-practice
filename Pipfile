@@ -8,6 +8,8 @@ streamlit = "*"
 streamlit-authenticator = "*"
 pandas = "*"
 openpyxl = "*"
+seaborn = "*"
+matplotlib = "*"
 
 [dev-packages]
 
