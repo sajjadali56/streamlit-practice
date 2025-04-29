@@ -31,7 +31,7 @@ def main():
     st.write(f"You entered {number}")
 
     budget = get_data("month")
-    budget["New Budget"] = budget["Budget"] + number
+    budget["New Budget"] = budget["Budget"] + st.session_state.get("number")
     # budget.sort_values("Budget", ascending=False, inplace=True)
 
     st.markdown("## Monthly Budget")
