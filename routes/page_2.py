@@ -28,7 +28,9 @@ with left:
         menu_icon="cast",
         default_index=0,
         styles={
-            "container": {"padding": "0!important", "background-color": "#fafafa"},
+            "container": {
+                "padding": "0!important",
+            },
             "icon": {"color": "orange", "font-size": "25px"},
             "nav-link": {
                 "font-size": "16px",
@@ -36,7 +38,7 @@ with left:
                 "margin": "0px",
                 "--hover-color": "#eee",
             },
-            "nav-link-selected": {"background-color": "#02ab21"},
+            # "nav-link-selected": {"background-color": "#02ab21"},
         },
     )
 
@@ -50,8 +52,11 @@ with right:
         menu_icon="cast",
         default_index=0,
         orientation="horizontal",
+        # "background-color": "#fafafa"
         styles={
-            "container": {"padding": "0!important", "background-color": "#fafafa"},
+            "container": {
+                "padding": "0!important",
+            },
             "icon": {"color": "orange", "font-size": "25px"},
             "nav-link": {
                 "font-size": "16px",

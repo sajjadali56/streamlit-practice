@@ -13,6 +13,7 @@ matplotlib = "*"
 streamlit-option-menu = "*"
 
 [dev-packages]
+types-seaborn = "*"
 
 [requires]
 python_version = "3.13"

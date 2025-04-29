@@ -5,7 +5,17 @@ import yaml
 from yaml.loader import SafeLoader
 
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+    layout="wide",
+    initial_sidebar_state="expanded",
+    page_title="My End Of Service App",
+    page_icon="🎉",
+    menu_items={
+        "Get Help": "https://www.extremelycoolapp.com/help",
+        "Report a bug": "https://www.extremelycoolapp.com/bug",
+        "About": "# This is a header. This is an *extremely* cool app!",
+    },
+)
 
 
 def main():
