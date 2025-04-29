@@ -36,13 +36,13 @@ def main():
         value=number,
     )
 
+    budget = get_data("month")
+
     if number:
         st.session_state.my_number = number
 
-    st.write(f"You entered {number}")
-
-    budget = get_data("month")
-    budget["New Budget"] = budget["Budget"] + st.session_state.get("number")
+        st.write(f"You entered {number}")
+        budget["New Budget"] = budget["Budget"] + st.session_state.get("number")
     # budget.sort_values("Budget", ascending=False, inplace=True)
 
     st.markdown("## Monthly Budget")
@@ -81,18 +81,32 @@ def main():
     extra = get_data("extra")
 
     st.markdown("## Extra")
-    st.dataframe(extra)
 
-    explode = [0.1, 0, 0, 0, 0]
-    fig, ax = plt.subplots()
-    ax = plt.pie(
-        extra["Budget"],
-        labels=extra["Item"].values,
-        explode=explode,
-        autopct="%1.1f%%",
-        colors=sns.color_palette("pastel"),
-    )
-    st.pyplot(fig)
+    left, right = st.columns(2)
+
+    with left:
+        explode = [0.1, 0, 0, 0, 0]
+        fig, ax = plt.subplots()
+        ax = plt.pie(
+            extra["Budget"],
+            labels=extra["Item"].values,
+            explode=explode,
+            autopct="%1.1f%%",
+            colors=sns.color_palette("pastel"),
+        )
+        st.pyplot(fig)
+
+    with right:
+        fig, ax = plt.subplots()
+        ax = sns.barplot(
+            x="Item",
+            y="Budget",
+            data=extra,
+            palette="pastel",
+        )
+        ax.set(xlabel="Item", ylabel="Budget")
+        plt.xticks(rotation=90)
+        st.pyplot(fig)
 
 
 main()
