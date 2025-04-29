@@ -12,10 +12,11 @@ def main():
     main_page = st.Page("./pages/main_page.py", title="Main Page", icon="🎈")
     page_2 = st.Page("./pages/page_2.py", title="Page 2", icon="❄️")
     page_3 = st.Page("./pages/page_3.py", title="Page 3", icon="🎉")
+    dummy = st.Page("./pages/dummy_page.py", title="Dummy Page", icon="🎉")
 
     # Set up navigation
     pg = st.navigation(
-        [main_page, page_2, page_3],
+        [main_page, page_2, page_3, dummy],
         expanded=True,
     )
 
@@ -38,9 +39,7 @@ try:
     res = authenticator.login()
 
     if st.session_state.get("authentication_status"):
-        # main()
-        authenticator.logout()
-        st.title("Welcome *{}*".format(st.session_state.get("name")))
+        main()
 
     elif st.session_state.get("authentication_status") is False:
         st.error("Username or password is incorrect")
