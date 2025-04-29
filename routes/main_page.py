@@ -49,6 +49,8 @@ def main():
     st.write(f"{budget.iloc[3, 0]} = {budget.iloc[3,2]}")
     st.dataframe(budget)
 
+    plt.style.use("dark_background")
+
     # sns plot here for Item agains Budget
     left, right = st.columns(2)
 
