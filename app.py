@@ -12,10 +12,10 @@ def main():
     authenticator.logout()
 
     # Define the pages
-    main_page = st.Page("./pages/main_page.py", title="Main Page", icon="🎈")
-    page_2 = st.Page("./pages/page_2.py", title="Page 2", icon="❄️")
-    page_3 = st.Page("./pages/page_3.py", title="Page 3", icon="🎉")
-    dummy = st.Page("./pages/dummy_page.py", title="Dummy Page", icon="🎉")
+    main_page = st.Page("./routes/main_page.py", title="Main Page", icon="🎈")
+    page_2 = st.Page("./routes/page_2.py", title="Page 2", icon="❄️")
+    page_3 = st.Page("./routes/page_3.py", title="Page 3", icon="🎉")
+    dummy = st.Page("./routes/dummy_page.py", title="Dummy Page", icon="🎉")
 
     # Set up navigation
     pg = st.navigation(

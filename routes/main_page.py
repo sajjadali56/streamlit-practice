@@ -25,7 +25,7 @@ st.sidebar.markdown("# Main page 🎈")
 def main():
     # st.write("Session State:", st.session_state)
 
-    st.page_link(page="./pages/page_2.py", label="Next Page", icon="❄️", help="Page 2")
+    # st.page_link(page="./pages/page_2.py", label="Next Page", icon="❄️", help="Page 2")
 
     "Starting a long computation..."
     # Add a placeholder
