@@ -4,9 +4,18 @@ import streamlit_shadcn_ui as ui
 from utils import get_data
 
 st.markdown("# ShadCN UI ❄️")
-ui.avatar(
-    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-)
+col1, col2 = st.columns([1, 3])
+with col1:
+    ui.avatar(
+        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    )
+
+with col2:
+    ui.tabs(
+        ["Tab 1", "Tab 2", "Tab 3"],
+        default_value="Tab 1",
+    )
+
 
 import streamlit_shadcn_ui as ui
 
@@ -60,10 +69,6 @@ for i, col in enumerate(cols):
 ui.date_picker("Date picker", mode="single")
 st.date_input("Date input", value=None, min_value=None, max_value=None, key=None)
 
-ui.tabs(
-    ["Tab 1", "Tab 2", "Tab 3"],
-    default_value="Tab 1",
-)
 
 budget = get_data("month")
 ui.table(budget)
