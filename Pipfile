@@ -11,6 +11,7 @@ openpyxl = "*"
 seaborn = "*"
 matplotlib = "*"
 streamlit-option-menu = "*"
+streamlit-shadcn-ui = "*"
 
 [dev-packages]
 types-seaborn = "*"
